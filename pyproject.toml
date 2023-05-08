@@ -10,6 +10,10 @@ packages = [{include = "pycon_opentelemetry_demo"}]
 python = "^3.10"
 opentelemetry-sdk = "^1.17.0"
 opentelemetry-exporter-otlp = "^1.17.0"
+fastapi = "^0.95.1"
+httpx = "^0.24.0"
+opentelemetry-instrumentation-fastapi = "^0.38b0"
+uvicorn = "^0.22.0"
 
 
 [build-system]
