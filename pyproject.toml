@@ -8,8 +8,12 @@ packages = [{include = "pycon_opentelemetry_demo"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-opentelemetry-sdk = "^1.17.0"
-opentelemetry-exporter-otlp = "^1.17.0"
+opentelemetry-sdk = ">=1.20.0"
+opentelemetry-exporter-otlp = ">=1.20.0"
+setuptools = "^68.2.2"
+fastapi = {version = ">=0.103.2", extras = ["all"]}
+opentelemetry-instrumentation-fastapi = ">=0.41b0"
+prometheus-fastapi-instrumentator = {git = "https://github.com/hsuyuming/prometheus-fastapi-instrumentator.git", rev = "integrate_with_opentelemetry"}
 
 
 [build-system]

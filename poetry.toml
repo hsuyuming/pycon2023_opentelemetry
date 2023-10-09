@@ -1,0 +1,7 @@
+[installer]
+no-binary = false
+parallel = true
+
+[virtualenvs]
+create = false
+prefer-active-python = false
