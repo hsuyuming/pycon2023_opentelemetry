@@ -17,9 +17,9 @@ from trace_example import tracer
 logger_exporter = ConsoleLogExporter()
 logger_processor = BatchLogRecordProcessor(logger_exporter)
 
-# Create an exporter + processor (InMemorySpanExporter)
-# trace_exporter = InMemorySpanExporter()
-# trace_processor = SimpleSpanProcessor(trace_exporter)
+# Create an exporter + processor (InMemoryLogExporter)
+# logger_exporter = InMemoryLogExporter()
+# logger_processor = SimpleLogRecordProcessor(logger_exporter)
 
 # Create an exporter + processor (OTLPLogExporter)
 # logger_exporter = OTLPLogExporter(endpoint="", insecure=True)
@@ -53,8 +53,10 @@ if __name__ == "__main__":
     with tracer.start_as_current_span("demo") as sp:
         sp.set_attribute("key", "value")
         logger.info("pycon OTEL logging demo")
-
-
+    
+    # When you use InMemoryLogExporter, you can use get_finished_logs to get all logs. It's good for unittest.
+    data = logger_exporter.get_finished_logs()
+    print(data[0].log_record.to_json())
 
 
 
