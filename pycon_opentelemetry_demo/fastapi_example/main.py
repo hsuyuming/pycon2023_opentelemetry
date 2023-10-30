@@ -79,7 +79,7 @@ app = fastapi.FastAPI()
 
 
 @app.get("/foo")
-def foobar():
+def foo():
     time.sleep(random.uniform(0,10))
     logger.info("someone call foo.")
     current_span = trace.get_current_span()

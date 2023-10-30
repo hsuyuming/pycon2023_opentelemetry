@@ -1,0 +1,5 @@
+#!/bin/bash
+docker compose down
+docker volume rm pycon2023_opentelemetry_grafana_data
+docker volume rm pycon2023_opentelemetry_prometheus_data
+docker compose up 
